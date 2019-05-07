@@ -1,0 +1,144 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": " Request of DeleteSubscriber ",
+            "properties": {
+                "AccountId": {
+                    "description": "The <code>accountId</code> that is associated with the budget whose subscriber you want to delete.",
+                    "maxLength": 12,
+                    "minLength": 12,
+                    "pattern": "\\d{12}",
+                    "type": "string"
+                },
+                "BudgetName": {
+                    "description": "The name of the budget whose subscriber you want to delete.",
+                    "maxLength": 100,
+                    "minLength": 1,
+                    "pattern": "[^:\\\\]+",
+                    "type": "string"
+                },
+                "Notification": {
+                    "description": "The notification whose subscriber you want to delete.",
+                    "properties": {
+                        "ComparisonOperator": {
+                            "description": "The comparison that is used for this notification.",
+                            "enum": [
+                                "GREATER_THAN",
+                                "LESS_THAN",
+                                "EQUAL_TO"
+                            ],
+                            "type": "string"
+                        },
+                        "NotificationState": {
+                            "description": "Whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you have passed the set threshold for the budget.",
+                            "enum": [
+                                "OK",
+                                "ALARM"
+                            ],
+                            "type": "string"
+                        },
+                        "NotificationType": {
+                            "description": "Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you're forecasted to spend (<code>FORECASTED</code>).",
+                            "enum": [
+                                "ACTUAL",
+                                "FORECASTED"
+                            ],
+                            "type": "string"
+                        },
+                        "Threshold": {
+                            "description": "The threshold that is associated with a notification. Thresholds are always a percentage.",
+                            "format": "double",
+                            "maximum": 1000000000,
+                            "minimum": 0,
+                            "type": "number"
+                        },
+                        "ThresholdType": {
+                            "description": "The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, AWS notifies you when you go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code> thresholds, AWS notifies you when you go over or are forecasted to go over a certain percentage of your forecasted spend. For example, if you have a budget for 200 dollars and you have a <code>PERCENTAGE</code> threshold of 80%, AWS notifies you when you go over 160 dollars.",
+                            "enum": [
+                                "PERCENTAGE",
+                                "ABSOLUTE_VALUE"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "NotificationType",
+                        "ComparisonOperator",
+                        "Threshold"
+                    ],
+                    "type": "object"
+                },
+                "Subscriber": {
+                    "description": "The subscriber that you want to delete.",
+                    "properties": {
+                        "Address": {
+                            "description": "The address that AWS sends budget notifications to, either an SNS topic or an email.",
+                            "format": "password",
+                            "maxLength": 2147483647,
+                            "minLength": 1,
+                            "pattern": ".*",
+                            "type": "string"
+                        },
+                        "SubscriptionType": {
+                            "description": "The type of notification that AWS sends to a subscriber.",
+                            "enum": [
+                                "SNS",
+                                "EMAIL"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "SubscriptionType",
+                        "Address"
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "AccountId",
+                "BudgetName",
+                "Notification",
+                "Subscriber"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

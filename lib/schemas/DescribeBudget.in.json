@@ -1,0 +1,65 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": " Request of DescribeBudget ",
+            "properties": {
+                "AccountId": {
+                    "description": "The <code>accountId</code> that is associated with the budget that you want a description of.",
+                    "maxLength": 12,
+                    "minLength": 12,
+                    "pattern": "\\d{12}",
+                    "type": "string"
+                },
+                "BudgetName": {
+                    "description": "The name of the budget that you want a description of.",
+                    "maxLength": 100,
+                    "minLength": 1,
+                    "pattern": "[^:\\\\]+",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AccountId",
+                "BudgetName"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
