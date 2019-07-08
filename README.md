@@ -5,7 +5,7 @@
 A generated **flow**ground connector for the AWS Budgets API (version 2016-10-20).
 
 Generated from: https://api.apis.guru/v2/specs/amazonaws.com/budgets/2016-10-20/swagger.json<br/>
-Generated at: 2019-05-07T17:35:03+03:00
+Generated at: 2019-07-08T14:12:27+03:00
 
 ## API Description
 
@@ -17,7 +17,8 @@ Supported authorization schemes:
 - API Key
 ## Actions
 
-### Creates a budget and, if included, notifications and subscribers.
+### CreateBudget
+> Creates a budget and, if included, notifications and subscribers.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -30,7 +31,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Creates a notification. You must create the budget before you create the associated notification.
+### CreateNotification
+> Creates a notification. You must create the budget before you create the associated notification.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -43,7 +45,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Creates a subscriber. You must create the associated budget and notification before you create the subscriber.
+### CreateSubscriber
+> Creates a subscriber. You must create the associated budget and notification before you create the subscriber.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -56,7 +59,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### <p>Deletes a budget. You can delete your budget at any time.</p> <important> <p>Deleting a budget also deletes the notifications and subscribers that are associated with that budget.</p> </important>
+### DeleteBudget
+<blockquote><p>Deletes a budget. You can delete your budget at any time.</p> <important> <p>Deleting a budget also deletes the notifications and subscribers that are associated with that budget.</p> </important></blockquote>
 
 #### Input Parameters
 * `Action` - _required_
@@ -69,7 +73,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### <p>Deletes a notification.</p> <important> <p>Deleting a notification also deletes the subscribers that are associated with the notification.</p> </important>
+### DeleteNotification
+<blockquote><p>Deletes a notification.</p> <important> <p>Deleting a notification also deletes the subscribers that are associated with the notification.</p> </important></blockquote>
 
 #### Input Parameters
 * `Action` - _required_
@@ -82,7 +87,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### <p>Deletes a subscriber.</p> <important> <p>Deleting the last subscriber to a notification also deletes the notification.</p> </important>
+### DeleteSubscriber
+<blockquote><p>Deletes a subscriber.</p> <important> <p>Deleting the last subscriber to a notification also deletes the notification.</p> </important></blockquote>
 
 #### Input Parameters
 * `Action` - _required_
@@ -95,7 +101,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Describes a budget.
+### DescribeBudget
+> Describes a budget.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -108,7 +115,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Describes the history for <code>DAILY</code>, <code>MONTHLY</code>, and <code>QUARTERLY</code> budgets. Budget history isn't available for <code>ANNUAL</code> budgets.
+### DescribeBudgetPerformanceHistory
+> Describes the history for <code>DAILY</code>, <code>MONTHLY</code>, and <code>QUARTERLY</code> budgets. Budget history isn't available for <code>ANNUAL</code> budgets.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -121,7 +129,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Lists the budgets that are associated with an account.
+### DescribeBudgets
+> Lists the budgets that are associated with an account.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -134,7 +143,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Lists the notifications that are associated with a budget.
+### DescribeNotificationsForBudget
+> Lists the notifications that are associated with a budget.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -147,7 +157,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Lists the subscribers that are associated with a notification.
+### DescribeSubscribersForNotification
+> Lists the subscribers that are associated with a notification.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -160,7 +171,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Updates a budget. You can change every part of a budget except for the <code>budgetName</code> and the <code>calculatedSpend</code>. When you modify a budget, the <code>calculatedSpend</code> drops to zero until AWS has new usage data to use for forecasting.
+### UpdateBudget
+> Updates a budget. You can change every part of a budget except for the <code>budgetName</code> and the <code>calculatedSpend</code>. When you modify a budget, the <code>calculatedSpend</code> drops to zero until AWS has new usage data to use for forecasting.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -173,7 +185,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Updates a notification.
+### UpdateNotification
+> Updates a notification.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -186,7 +199,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Updates a subscriber.
+### UpdateSubscriber
+> Updates a subscriber.<br/>
 
 #### Input Parameters
 * `Action` - _required_
